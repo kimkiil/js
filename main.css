@@ -1,0 +1,9 @@
+.alert-box {
+    background-color: skyblue;
+    padding: 20px;
+    color: white;
+    border-radius: 5px;
+    
+    /* 알림창을 평소에 숨김 */
+    display: none; 
+}
