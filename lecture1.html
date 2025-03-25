@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="alert-box">알림창임</div>    
-    <button onclick="document.getElementsByClassName('alert-box').style.display('block')">버튼</button>
+    <h1 id="hello">안녕하세요</h1>
+    <h1 id="hi">JS 초보에요</h1>
+
+    <script>
+        document.getElementById('hello').innerHTML = '안녕';
+        document.getElementById('hello').style.color = 'red';
+        document.getElementById('hi').innerHTML = 'JS 고수에요';
+        //숙제 폰트 사이즈를 16px로 줄이기
+        document.getElementById('hello').style.fontSize = '16px';
+    </script>
 </body>
 </html>
