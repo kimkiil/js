@@ -11,6 +11,33 @@
 .list-group {
     display: none;
 }
-.list-group.show {
-    display: block;
+
+.black-bg {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    z-index : 10;
+    padding: 30px;
+    visibility: hidden;
+    transition: all 1s;
+  }
+  .white-bg {
+    background: white;
+    border-radius: 5px;
+    padding: 30px;
+    width: 50%;
+    margin: auto;
+    top: -100px;
+  } 
+  .show {
+    visibility: visible;
+    transition: all 1s;
+    top: 0 auto;
+}
+  .black-bg.show {
+    visibility: visible;
+    top: 0 auto;
 }
