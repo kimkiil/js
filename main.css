@@ -7,3 +7,10 @@
     /* 알림창을 평소에 숨김 */
     display: none; 
 }
+
+.list-group {
+    display: none;
+}
+.list-group.show {
+    display: block;
+}

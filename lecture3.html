@@ -9,17 +9,13 @@
 <body>
     <div class="alert-box" id="alert">
         <p id="HW">알림창임</p>
-        <button onclick="alertOpen('none');">닫기</button>
+        <button id="close">닫기</button>
     </div>    
     <button onclick="alertOpen('block');">버튼</button>
     <button onclick="contentFill('아이디를 입력하세요.');">버튼1</button>
     <button onclick="contentFill('비밀번호를 입력하세요.');">버튼2</button>
 
     <script>
-        // function alertEsc(){
-        //     document.getElementById('alert').style.display = 'none';
-        // }
-
         function alertOpen(구멍){
             document.getElementById('alert').style.display = 구멍;
             
@@ -30,7 +26,9 @@
             document.getElementById('alert').style.display = 'block';
         }
 
-        
+        document.getElementById('close').addEventListener('mouseover', function() {
+        document.getElementById('alert').style.display = 'none';
+        });
     </script>
 </body>
 </html>
