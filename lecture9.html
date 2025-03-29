@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+    <div style="overflow: hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <img src="car1.png" alt="Car 1">
+            </div>
+            <div class="slide-box">
+                <img src="car2.png" alt="Car 2">
+            </div>
+            <div class="slide-box">
+                <img src="car3.png" alt="Car 3">
+            </div>
+        </div>
+    </div>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+
+
+
+    <script>
+        $('.slide-1').on('click', function(){
+            $('.slide-container').css('transform', 'translateX(0)');
+        });
+
+        $('.slide-2').on('click', function(){
+            $('.slide-container').css('transform', 'translateX(-100vw)'); // 오타 수정
+        });
+
+        $('.slide-3').on('click', function(){
+            $('.slide-container').css('transform', 'translateX(-200vw)');
+        });
+    </script>
+
+
+</body>
+</html>

@@ -7,8 +7,9 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css"
 </head>
-<body>
-
+<body class="light">
+    <span><button class="badge bg-dark">Dark |🔄</button></span>
+</br></br>
     <button class="btn btn-primary" id="login">로그인</button> 
     
     <div class="black-bg">
@@ -16,6 +17,9 @@
           <h4>로그인하세요</h4>
 
             <form action="success.html">
+                <div class="my-3">
+                    <input type="text" class="form-control" id="email">
+                </div>
                 <div class="my-3">
                 <input type="text" class="form-control" id="id">
                 </div>
@@ -28,15 +32,33 @@
 
         </div>
     </div>
-    
+    안녕하세요
     <script>
+
+        var count = 0;
+        $('.badge').on('click', function(){
+            count++;
+            if(count % 2 == 1){
+                $('.light').removeClass('light').addClass('dark');
+                $(this).text('Light |🔄');
+            }else if(count % 2 == 0){
+                $('.dark').removeClass('dark').addClass('light');
+                $(this).text('Dark |🔄');
+            }
+        })
+
+        // badge 클릭횟수가 홀수면 내부 글자를 Light로 변경
+        // badge 클릭횟수가 짝수면 내부 글자를 Dark로 변경
+
+
 
         $('#login').on('click', function(){
             $('.black-bg').toggleClass('show');
             $('.white-bg').toggleClass('show');
         }) 
 
-        $('#close').on('click', function(){
+        $('#close').on('click', function(e){
+            e.preventDefault();
             $('.black-bg').removeClass('show');
             $('.white-bg').toggleClass('show');
         })
@@ -45,6 +67,7 @@
         // 저기 아이디 비번 공백검사 후 알림창띄워주세요~
         // 비번 6자리 미만이면 알림창 띄우기
         $('form').on('submit',function(e){
+            let 입력한값 = $('#email').val();
             if($('#id').val() == ""){
                 alert("아이디를 입력해주세요.");
                 e.preventDefault();
@@ -53,6 +76,9 @@
                 e.preventDefault();
             } else if($('#pw').val().length < 6){
                 alert("비밀번호는 6자리 이상이어야 합니다.");
+                e.preventDefault();
+            } else if(!/\S+@\S+\.\S+/.test(입력한값)){
+                alert("이메일 형식아님");
                 e.preventDefault();
             }
         })

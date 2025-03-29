@@ -37,3 +37,24 @@
     top: 0 auto;
     opacity: 1;
 }
+
+  .dark{
+    background-color: black;
+    color: white;
+  }
+  .light{
+    background-color: white;
+    color: black;
+  }
+  .slide-container {
+    width: 300vw;
+    transition: all 1s;
+  }
+  .slide-box {
+    float: left;
+    width: 100vw;
+    flex-shrink: 0;
+  }
+  .slide-box img {
+    width: 100%;
+  }

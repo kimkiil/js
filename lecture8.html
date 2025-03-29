@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="alert alert-danger">
+        <p>1초 이내 구매시 사은품 증정!</p>
+    </div>
+    <p class="babo">바보</p>
+
+    <script>
+        // 1초 후 .alert 숨기기
+        setTimeout(function(){
+            $('.alert').hide();
+        }, 1000);
+    
+        // .babo 요소를 반복적으로 보였다가 숨기기
+        function toggleBabo() {
+            $('.babo').show(); // .babo 보이기
+            setTimeout(function(){
+                $('.babo').hide(); // 1초 후 .babo 숨기기
+                setTimeout(toggleBabo, 1000); // 다시 1초 후 toggleBabo 호출
+            }, 1000);
+        }
+    
+        // toggleBabo 함수 실행
+        toggleBabo();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
