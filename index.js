@@ -1,4 +1,4 @@
-const moongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 mongoose.connect('mongodb+srv://studyUser:<db_password>@cluster0.vsg20la.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
